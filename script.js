@@ -1,3 +1,7 @@
+ weather-function
+function(){
+    }
+
 var requestUrl = '';
 
 fetch(requestUrl)
@@ -6,3 +10,4 @@ fetch(requestUrl)
   })
   .then(function (data) {
     console.log(data)
+  main
