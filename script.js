@@ -7,6 +7,7 @@ function(){
     }
 
 var requestUrl = '';
+var fetchButton = document.getElementById('search');
 
 fetch(requestUrl)
   .then(function (response) {
