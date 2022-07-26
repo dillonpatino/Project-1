@@ -1,3 +1,10 @@
+function weatherApiCall(){
+    fetch(https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key)
+}
+ weather-function
+function(){
+    }
+
 var requestUrl = '';
 
 fetch(requestUrl)
@@ -6,6 +13,8 @@ fetch(requestUrl)
   })
   .then(function (data) {
     console.log(data)
+
+
 
     L.mapquest.key = 'KEY';
 var baseLayer = L.mapquest.tileLayer('dark');
@@ -38,3 +47,4 @@ function addLayerControl(map) {
 }
 
 fetchButton.addEventListener('click', getApi);
+
