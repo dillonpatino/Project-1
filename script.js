@@ -27,6 +27,25 @@ function getoneCall(data, city) {
   }
 
   var trailSearch = function(event) {
+
+
+function weatherApiCall(){
+    var weatherKey = '{e2ca5eb2bd8c415361262e3d9a4b2aa5}'
+    fetch(https://api.openweathermap.org/data/2.5/weather?lat=43.700111&lon=-79.416298&appid={e2ca5eb2bd8c415361262e3d9a4b2aa5})
+    }
+
+  
+function weatherApiCall(){
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=43.700111&lon=-79.416298&appid={e2ca5eb2bd8c415361262e3d9a4b2aa5}')
+    }
+
+
+var requestUrl = '';
+var fetchButton = document.getElementById('search');
+
+
+var trailSearch = function(event) {
+
   event.preventDefault();
 
   var trailName = $("#trailname").val().trim()
@@ -35,8 +54,7 @@ function getoneCall(data, city) {
       trailWeather(trailName);
 
       $("#trailname").val("");
-
-  } else {
+    } else {
       alert("Enter a trail name");
   }
 };
@@ -45,5 +63,8 @@ var displayWeather = function(weatherData, city) {
   $("#main-trail-temp").text(`Temp: ${weatherData.current.temp}` + "°F");
   $("#main-trail-humid").text(`Humidity: ${weatherData.current.humidity}` + "%");
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
-}
   $("#search").on("click", trailSearch);
+  $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
+}
+
+
