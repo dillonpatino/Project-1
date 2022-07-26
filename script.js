@@ -54,8 +54,7 @@ var trailSearch = function(event) {
   }
 };
 
-var displayWeather = function(weatherData, city) {
-  $("#main-trail-name").text
+var trailWeather = function(weatherData) {
   $("#main-trail-temp").text(`Temp: ${weatherData.current.temp}` + "°F");
   $("#main-trail-humid").text(`Humidity: ${weatherData.current.humidity}` + "%");
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
