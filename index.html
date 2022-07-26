@@ -24,7 +24,21 @@
                     <form class="form-inline" id="search-form">
                         <input type="search" class="form-contorl mb-2" id="cityname" placeholder="Enter Trail Name...">
                     </form>
-                    <button type="button" class="btn btn-primary btn-sm">Search</button>
+                    <button type="button" id="search" class="btn btn-primary btn-sm">Search</button>
+                    <ul class="list-group" id="search-history"></ul>
+                </div>
+
+                <div class="col-md-9">
+                  <div class="card mt-2">
+                    <div class="card-body">
+                      <div class="d-flex flex row">
+                        <h4 class="card-title align-self-center" id="main-trail-name"></h4>
+                      </div>
+                      <h6 class="card-subtitle text-muted" id="main-trail-temp">Temp:</h6>
+                      <h6 class="card-subtitle mt-3 text muted" id="main-trail-humid">Humidity:</h6>
+                      <h6 class="card-subtitle mt-3 text muted" id="main-city-wind">Wind Speed:</h6>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
