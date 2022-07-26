@@ -1,50 +1,11 @@
-function weatherApiCall(){
-    fetch(https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key)
-}
- weather-function
-function(){
+function getApi() {
+    var requestUrl = 'http://www.mapquestapi.com/search/v2/radius?key=9ODBlqwdopmVqeGPPP1PrrUCI0uUXEOG&maxMatches=4&origin=39.750307,-104.999472';
     }
-
-var requestUrl = '';
-
-fetch(requestUrl)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data)
-
-
-
-    L.mapquest.key = 'KEY';
-var baseLayer = L.mapquest.tileLayer('dark');
-          
-L.mapquest.geocoding().geocode(['New York, NY'], showMap);
-
-function showMap(err, data) {
-  var map = createMap();
-  map.addControl(L.mapquest.control());
-  addLayerControl(map);
-}
-
-function createMap() {
-  var map = L.mapquest.map('map', {
-    center: [40.7237, -73.9825],
-    zoom: 14,
-    layers: baseLayer
-  });
-  return map;
-}
-
-function addLayerControl(map) {
-  L.control.layers({
-    'Map': L.mapquest.tileLayer('map'),
-    'Satellite': L.mapquest.tileLayer('satellite'),
-    'Hybrid': L.mapquest.tileLayer('hybrid'),
-    'Light': L.mapquest.tileLayer('light'),
-    'Dark': baseLayer
-  }, {}, { position: 'topleft'}).addTo(map);
-}
-
-fetchButton.addEventListener('click', getApi);
-
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data)
+    
+      }
