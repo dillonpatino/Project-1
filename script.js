@@ -24,6 +24,9 @@ function getoneCall(data, city) {
         displayWeather(data, city);
         displayFiveDay(data);
     })
+  }
+
+  var trailSearch = function(event) {
 
 
 function weatherApiCall(){
@@ -42,9 +45,9 @@ var fetchButton = document.getElementById('search');
 
 
 var trailSearch = function(event) {
+
   event.preventDefault();
 
-  
   var trailName = $("#trailname").val().trim()
 
   if (trailName) {
@@ -57,10 +60,11 @@ var trailSearch = function(event) {
 };
 
 var displayWeather = function(weatherData, city) {
-  $("#main-trail-name").text
   $("#main-trail-temp").text(`Temp: ${weatherData.current.temp}` + "°F");
   $("#main-trail-humid").text(`Humidity: ${weatherData.current.humidity}` + "%");
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
+  $("#search").on("click", trailSearch);
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
 }
+
 
