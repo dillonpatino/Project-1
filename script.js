@@ -1,4 +1,3 @@
-
 function getApi(lat, lon) {
   var requestUrl = 'http://www.mapquestapi.com/search/v2/radius?key=9ODBlqwdopmVqeGPPP1PrrUCI0uUXEOG&maxMatches=4&origin=' + lat + ',' + lon ;
   fetch(requestUrl)
@@ -55,8 +54,12 @@ function trailSearch(event) {
   }
 };
 
+
 function displayWeather(weatherData, city) {
   $("#main-trail-name").text
+
+var trailWeather = function(weatherData) {
+
   $("#main-trail-temp").text(`Temp: ${weatherData.current.temp}` + "°F");
   $("#main-trail-humid").text(`Humidity: ${weatherData.current.humidity}` + "%");
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
