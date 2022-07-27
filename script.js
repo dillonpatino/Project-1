@@ -64,8 +64,8 @@ var trailWeather = function(weatherData) {
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
     }
 }
-}
+
 
 $("#search").on("click", trailSearch);
 
-//comment
+//comment//
