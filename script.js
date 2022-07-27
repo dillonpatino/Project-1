@@ -10,6 +10,7 @@ function getApi(lat, lon) {
     })
 }
 
+
 var searchHistory = []
 var prevCitySearched = ""
 
