@@ -1,19 +1,15 @@
-function getApi() {
-  var nationalParksUrl = "https://developer.nps.gov/api/v1/parks?stateCode=UT&api_key=3RvM0wPt95K9Bd1Hsb6l0GvKPxftZG5gMBZJe0Ic";
-  fetch(nationalParksUrl)
+function getParkData(lat, lon) {
+  var requestUrl = "https://developer.nps.gov/api/v1/parks?stateCode=UT&api_key=3RvM0wPt95K9Bd1Hsb6l0GvKPxftZG5gMBZJe0Ic";
+  fetch(requestUrl)
     .then(function (response) {
-        return response.json()
+      return response.json();
     })
     .then(function (data) {
-        console.log(data);
-        processNationalParks(data);
+      console.log("Sending park info")
+      console.log(data)
+      var parkData = generateParkList(data)
+      displayParkData(parkData);
     })
-}
-function processNationalParks(data){
-    for (var i = 0; i < data.length; i++) {
-        data[i].fullName
-        $("#main-trail-temp").text(`Temp: ${data[i].fullName}` + " ");
-    }
 }
 
 
@@ -28,9 +24,10 @@ function cityWeather(city) {
       return response.json()
     })
     .then(function (data) {
+      console.log("Called city Weather")
       console.log(data);
       getoneCall(data, city);
-      getApi();
+      getParkData(data[0].lat, data[0].lon)
     })
 };
 function getoneCall(data, city) {
@@ -64,11 +61,43 @@ function trailSearch(event) {
 function displayWeather(weatherData, city) {
   $("#main-trail-name").text
 
-var trailWeather = function(weatherData) {
+  $("#main-trail-condition").text(`Cond: ${weatherData.current.weather[0].description}`);
   $("#main-trail-temp").text(`Temp: ${weatherData.current.temp}` + "°F");
   $("#main-trail-humid").text(`Humidity: ${weatherData.current.humidity}` + "%");
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
-    }
+    
+}
+
+function displayParkData(parkData) {
+  console.log(parkData)
+
+  parkData.forEach((park) => {
+    const aNode = document.createElement("a");
+    aNode.setAttribute("id", "parkName");
+    const node = document.createElement("li");
+    const textnode = document.createTextNode(park.parkName);
+    aNode.appendChild(node);
+    node.appendChild(textnode);
+    document.getElementById("park-name-holder").appendChild(aNode);
+
+    //TODO: FIX ME $("#parkName").on("click", cityWeather(park.latitude, park.longitude));
+
+  });
+
+}
+
+function test(lat, long) {
+  console.log("Lat:" + lat + " Long:" + long)
+}
+function generateParkList(data) {
+  parkList = []
+
+  data.data.forEach((park) => {
+    parkList.push({parkName: park.fullName, latitude: park.latitude, longitude: park.longitude})
+
+  });
+
+  return parkList;
 }
 
 
