@@ -1,13 +1,19 @@
-function getApi(lat, lon) {
-  var requestUrl = "https://developer.nps.gov/api/v1/parks?stateCode=UT&api_key=3RvM0wPt95K9Bd1Hsb6l0GvKPxftZG5gMBZJe0Ic";
-  fetch(requestUrl)
+function getApi() {
+  var nationalParksUrl = "https://developer.nps.gov/api/v1/parks?stateCode=UT&api_key=3RvM0wPt95K9Bd1Hsb6l0GvKPxftZG5gMBZJe0Ic";
+  fetch(nationalParksUrl)
     .then(function (response) {
-      return response.json();
+        return response.json()
     })
     .then(function (data) {
-      console.log(data)
-
+        console.log(data);
+        processNationalParks(data);
     })
+}
+function processNationalParks(data){
+    for (var i = 0; i < data.length; i++) {
+        data[i].fullName
+        $("#main-trail-temp").text(`Temp: ${data[i].fullName}` + " ");
+    }
 }
 
 
@@ -24,7 +30,7 @@ function cityWeather(city) {
     .then(function (data) {
       console.log(data);
       getoneCall(data, city);
-      getApi(data[0].lat, data[0].lon)
+      getApi();
     })
 };
 function getoneCall(data, city) {
