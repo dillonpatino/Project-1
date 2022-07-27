@@ -1,4 +1,3 @@
-
 var searchHistory = []
 var prevCitySearched = ""
 
