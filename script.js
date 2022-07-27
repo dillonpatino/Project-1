@@ -1,5 +1,5 @@
 function getApi(lat, lon) {
-  var requestUrl = 'http://www.mapquestapi.com/search/v2/radius?key=9ODBlqwdopmVqeGPPP1PrrUCI0uUXEOG&maxMatches=4&origin=' + lat + ',' + lon ;
+  var requestUrl = "https://developer.nps.gov/api/v1/parks?stateCode=UT&api_key=3RvM0wPt95K9Bd1Hsb6l0GvKPxftZG5gMBZJe0Ic";
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
@@ -63,6 +63,7 @@ var trailWeather = function(weatherData) {
   $("#main-trail-humid").text(`Humidity: ${weatherData.current.humidity}` + "%");
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
     }
+}
 }
 
 $("#search").on("click", trailSearch);
