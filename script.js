@@ -13,6 +13,7 @@ function getParkData(lat, lon) {
 }
 
 
+
 var searchHistory = []
 var prevCitySearched = ""
 
