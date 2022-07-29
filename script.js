@@ -12,6 +12,10 @@ function getParkData() {
     })
 }
 
+function getTraildata(parkCode) {
+  var requestUrl = "https://developer.nps.gov/api/v1/thingstodo?parkCode="+parkCode+"&api_key=3RvM0wPt95K9Bd1Hsb6l0GvKPxftZG5gMBZJe0Ic";
+  
+}
 
 
 var searchHistory = []
