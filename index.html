@@ -2,17 +2,18 @@
 <html lang="en">
 
   <head>
-    <title>National Parks/Weather</title>
+    <title>Hike Trails/Weather</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
       <header class="bg-primary">
-        <h1 class="p-2 text-light text-center">Utah National Park Weather!</h1>
+        <h1 class="p-2 text-light text-center">Hike With Us!</h1>
       </header>
 
       <div class="m-4 p-4">
@@ -34,9 +35,13 @@
                       <div class="d-flex flex row">
                         <h4 class="card-title align-self-center" id="main-trail-name"></h4>
                       </div>
-                      <h6 class="card-subtitle text-muted" id="main-trail-temp">Temp:</h6>
+                      <h6 class="card-subtitle text-muted" id="main-trail-condition">Cond:</h6>
+                      <h6 class="card-subtitle mt-3 text-muted" id="main-trail-temp">Temp:</h6>
                       <h6 class="card-subtitle mt-3 text muted" id="main-trail-humid">Humidity:</h6>
-                      <h6 class="card-subtitle mt-3 text muted" id="main-trail-wind">Wind Speed:</h6>
+
+                      <h6 class="card-subtitle mt-3 text muted" id="main-city-wind">Wind Speed:</h6>
+                      <h6 class="card-subtitle mt-3 text muted" id="main-park-name">Park Name:</h6>
+                        <div id="park-name-holder"></div>
                     </div>
                   </div>
                 </div>
