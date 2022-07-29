@@ -61,14 +61,11 @@ function trailSearch(event) {
 
 function displayWeather(weatherData) {
   $("#main-trail-name").text
-
   $("#main-trail-condition").text(`Cond: ${weatherData.current.weather[0].description}`);
   $("#main-trail-temp").text(`Temp: ${weatherData.current.temp}` + "°F");
   $("#main-trail-humid").text(`Humidity: ${weatherData.current.humidity}` + "%");
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
-    
-
-}
+    }
 
 function displayParkData(parkData) {
   console.log(parkData)
@@ -100,10 +97,8 @@ function generateParkList(data) {
   });
 
   return parkList;
-
 }
-
 
 $("#search").on("click", trailSearch);
 
-//comment//
+//comment
