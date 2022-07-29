@@ -57,15 +57,14 @@ function trailSearch(event) {
 
 function displayWeather(weatherData, city) {
   $("#main-trail-name").text
+}
 
-
+var trailWeather = function(weatherData) {
   $("#main-trail-temp").text(`Temp: ${weatherData.current.temp}` + "°F");
   $("#main-trail-humid").text(`Humidity: ${weatherData.current.humidity}` + "%");
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
-    
 }
-
 
 $("#search").on("click", trailSearch);
 
-//comment//
+//comment
