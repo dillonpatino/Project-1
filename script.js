@@ -9,6 +9,7 @@ function getParkData() {
       console.log(data)
       var parkData = generateParkList(data)
       displayParkData(parkData);
+      
     })
 }
 
