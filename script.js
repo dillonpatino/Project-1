@@ -67,6 +67,7 @@ function displayWeather(weatherData) {
   $("#main-trail-humid").text(`Humidity: ${weatherData.current.humidity}` + "%");
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
     
+
 }
 
 function displayParkData(parkData) {
@@ -99,6 +100,7 @@ function generateParkList(data) {
   });
 
   return parkList;
+
 }
 
 
