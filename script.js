@@ -12,6 +12,7 @@ function getParkData() {
     })
 }
 
+
 function getTraildata(parkCode) {
   var apiUrl = "https://developer.nps.gov/api/v1/thingstodo?parkCode="+parkCode+"&api_key=3RvM0wPt95K9Bd1Hsb6l0GvKPxftZG5gMBZJe0Ic";
   
@@ -103,6 +104,43 @@ function generateParkList(data) {
   return parkList;
 }
 
-$("#search").on("click", trailSearch);
+// $("#search").on("click", trailSearch);
 
+let dropdown = document.getElementById('parks-dropdown');
+dropdown.length = 0;
+
+let defaultOption = document.createElement('option');
+defaultOption.text = 'Choose Park';
+
+dropdown.add(defaultOption);
+dropdown.selectedIndex = 0;
+
+const url = 'https://developer.nps.gov/api/v1/parks?stateCode=UT&api_key=3RvM0wPt95K9Bd1Hsb6l0GvKPxftZG5gMBZJe0Ic';
+
+fetch(url)
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.warn('Error. Status Code: ' + response.status);
+        return;
+      }
+      response.json().then(function(data) {
+        let option;
+
+        for (let i =0; i < data.length; i++) {
+          option = document.createElement('option');
+          option.text = data[i].name;
+          option.value = data[i].fullName;
+          dropdown.add(option);
+        }
+      });
+    }
+  )
+  .catch(function(err) {
+    console.error('Fetch Error -', err);
+  });
+
+
+// $(window).on("load", getParkData);
 //comment
+
