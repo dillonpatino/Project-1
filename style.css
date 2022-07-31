@@ -21,3 +21,46 @@ h6 {
 .col-md-3 {
     color: aliceblue;
 }
+
+.card-mt-2 {
+    position: relative;
+    transform-style: preserve-3d;
+    width: auto;
+    height: auto;
+    background: #fff;
+    border-radius: 10px;
+    background: rgba(180, 206, 238, 0.6);
+    border-top: #3ca0e7;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown {
+    margin: auto;
+    padding: 10px 0 0 0;
+    font-size: 16px;
+}
+
+#parks-dropdown {
+    transition: width 0.3s ease-in-out;
+    list-style: none;
+    margin: auto;
+    border-left: 2px solid #3ca0e7;
+    display: block;
+    padding: 0 30px;
+    position: relative;
+    border-radius: 1.5em;
+}
+
+#parks-dropdown:not(:disabled):active {
+    transform: translateY(0.1em);
+}
+
+#parks-dropdown:not(:disabled):hover{
+    background-color: rgb(30, 189, 165);
+}
+
+#parks-dropdown:hover {
+    color: #171716;
+}
+

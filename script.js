@@ -73,6 +73,7 @@ function getParkData() {
   $("#main-trail-humid").text(`Humidity: ${weatherData.current.humidity}` + "%");
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
   }
+
   
   function displayParkData(parkData) {
   console.log(parkData)
@@ -135,7 +136,7 @@ function getParkData() {
   option = document.createElement('option');
   option.setAttribute("id", parksArray[i].parkCode);
   //add onclick to each element to call get parkData(parkCode)
-  option.text = parksArray[i].name;
+  option.text = parksArray[i].fullName;
   option.value = parksArray[i].fullName;
   dropdown.add(option);
   }
@@ -147,7 +148,7 @@ function getParkData() {
   });
   
   
-  // $(window).on("load", getParkData);
+  $(window).on("load", getParkData);
   //comment
   
   function handleParkClick() {
