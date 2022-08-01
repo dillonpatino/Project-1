@@ -144,6 +144,7 @@ dropdown.selectedIndex = 0;
 
 const url = 'https://developer.nps.gov/api/v1/parks?stateCode=UT&api_key=3RvM0wPt95K9Bd1Hsb6l0GvKPxftZG5gMBZJe0Ic';
 
+// function that populates the dropdown menu.
 fetch(url)
   .then(
     function (response) {
@@ -160,38 +161,21 @@ fetch(url)
           option = document.createElement('option');
           option.setAttribute("id", parksArray[i].parkCode);
           //add onclick to each element to call get parkData(parkCode)
-          option.text = parksArray[i].name;
+          option.text = parksArray[i].fullName;
           option.value = parksArray[i].parkCode;
           dropdown.add(option);
+          
+          
+          
+            
         }
       });
-    }
-
-  function(response) {
-  if (response.status !== 200) {
-  console.warn('Error. Status Code: ' + response.status);
-  return;
-  }
-  response.json().then(function(data) {
-  console.log(data)
-  let parksArray = data.data;
-  let option;
-  
-  for (let i =0; i < parksArray.length; i++) {
-  option = document.createElement('option');
-  option.setAttribute("id", parksArray[i].parkCode);
-  //add onclick to each element to call get parkData(parkCode)
-  option.text = parksArray[i].fullName;
-  option.value = parksArray[i].fullName;
-  dropdown.add(option);
-  }
-  });
-  }
-
-  )
+    })
   .catch(function (err) {
     console.error('Fetch Error -', err);
   });
+
+  document.addEventListener("click", displayWeather);
 
   
   $(window).on("load", getParkData);
