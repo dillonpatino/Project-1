@@ -93,9 +93,13 @@ function displayWeather(weatherData) {
   $("#main-trail-temp").text(`Temp: ${weatherData.current.temp}` + "°F");
   $("#main-trail-humid").text(`Humidity: ${weatherData.current.humidity}` + "%");
   $("#main-trail-wind").text(`Wind Speed: ${weatherData.current.wind_speed}` + " mph");
+
 }
 
-function displayParkData(parkData) {
+
+
+  
+  function displayParkData(parkData) {
   console.log(parkData)
 
   parkData.forEach((park) => {
@@ -162,16 +166,38 @@ fetch(url)
         }
       });
     }
+
+  function(response) {
+  if (response.status !== 200) {
+  console.warn('Error. Status Code: ' + response.status);
+  return;
+  }
+  response.json().then(function(data) {
+  console.log(data)
+  let parksArray = data.data;
+  let option;
+  
+  for (let i =0; i < parksArray.length; i++) {
+  option = document.createElement('option');
+  option.setAttribute("id", parksArray[i].parkCode);
+  //add onclick to each element to call get parkData(parkCode)
+  option.text = parksArray[i].fullName;
+  option.value = parksArray[i].fullName;
+  dropdown.add(option);
+  }
+  });
+  }
+
   )
   .catch(function (err) {
     console.error('Fetch Error -', err);
   });
 
-
-$(window).on("load", getParkData);
-//comment
-
-function handleParkClick() {
+  
+  $(window).on("load", getParkData);
+  //comment
+  
+  function handleParkClick() {
   //call weather service for park
   //call getParkData(parkCode)
 }
