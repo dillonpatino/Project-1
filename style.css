@@ -17,3 +17,7 @@ h6 {
     transition: transform 350ms;
     transform: scale(1.03);
 }
+
+.col-md-3 {
+    color: aliceblue;
+}
