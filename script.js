@@ -28,10 +28,17 @@ function getSingleParkData(parkCode) {
   .then(function (response) {
 
     // TODO: Loop over all activities and display in the page
+    var parkActivity = $("#main-park-activity");
+    parkActivity.empty();
     const activities = response.data;
     for (let i = 0; i < activities.length; i++) {
-      
-      $("#main-park-activity").append(`<div> <p>` + activities[i].shortDescription + "</p> </div> <br/>");
+
+      // const activityEl = $('<div>').text(activities[i].shortDescription);
+      // const br = $('<br>');
+      // activityEl.append(br)
+      // console.log(activityEl);
+      parkActivity.append(`<div> <p>` + activities[i].shortDescription + "</p> </div> <br/>");
+
 
       console.log("Activities Data: ", activities[i].shortDescription);
     }
@@ -100,7 +107,8 @@ function displayWeather(weatherData) {
   
   function displayParkData(parkData) {
   console.log(parkData)
-
+  var singleParkData = document.getElementById("park-name-holder")
+  singleParkData.innerHTML=""
   parkData.forEach((park) => {
     const aNode = document.createElement("a");
     aNode.setAttribute("id", park.parkName);
@@ -108,7 +116,7 @@ function displayWeather(weatherData) {
     const textnode = document.createTextNode(park.parkName);
     aNode.appendChild(node);
     node.appendChild(textnode);
-    document.getElementById("park-name-holder").appendChild(aNode);
+    singleParkData.appendChild(aNode);
     // $(document.getElementById(park.parkName)).on("click", function () {alert (park.parkName + ' was clicked')});
     $(document.getElementById(park.parkName)).on("click", function () { getoneCall(park.latitude, park.longitude) });
 
