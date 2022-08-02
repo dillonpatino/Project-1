@@ -46,7 +46,7 @@ var prevCitySearched = ""
 
 function cityWeather(city) {
 
-  var geoLocation = `http://api.openweathermap.org/geo/1.0/zip?zip=${city},US&appid=33a442ce0b1dad52f9352616c57d9d69`
+  var geoLocation = `https://api.openweathermap.org/geo/1.0/zip?zip=${city},US&appid=33a442ce0b1dad52f9352616c57d9d69`
   fetch(geoLocation)
     .then(function (response) {
       return response.json()
