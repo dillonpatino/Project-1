@@ -5,7 +5,7 @@ Hello, Welcome to National Parks of Utah!
 Live URL: https://dillonpatino.github.io/Project-1/
 
 
-VISIUAL EXAMPLE:
+VISUAL EXAMPLE:
 
 ![Screen Shot 2022-08-01 at 9 49 08 PM](https://user-images.githubusercontent.com/106941418/182288097-21a6abce-aa38-479a-9620-96a8fb533193.png)
 
