@@ -13,7 +13,7 @@ function getParkData() {
 }
 
 
-
+var parkChoiceAndWeather = JSON.parse(localStorage.getItem("parkChoiceAndWeather")) || [];
 var searchHistory = []
 var prevCitySearched = ""
 
@@ -107,4 +107,4 @@ function generateParkList(data) {
 $("#search").on("click", trailSearch);
 
 //comment//
-//comment//
+
