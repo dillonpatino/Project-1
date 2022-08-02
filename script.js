@@ -11,7 +11,7 @@ function getParkData() {
       console.log("Sending park info")
       console.log(data)
       var parkData = generateParkList(data)
-      // displayParkData(parkData);
+      
     })
 }
 
@@ -32,16 +32,18 @@ function getSingleParkData(parkCode) {
     parkActivity.empty();
     const activities = response.data;
     for (let i = 0; i < activities.length; i++) {
+
       // const activityEl = $('<div>').text(activities[i].shortDescription);
       // const br = $('<br>');
       // activityEl.append(br)
       // console.log(activityEl);
       parkActivity.append(`<div> <p>` + activities[i].shortDescription + "</p> </div> <br/>");
 
+
       console.log("Activities Data: ", activities[i].shortDescription);
     }
   })
-    // cityWeather();
+   
 
 }
 
@@ -51,7 +53,7 @@ var prevCitySearched = ""
 
 function cityWeather(city) {
 
-  var geoLocation = `http://api.openweathermap.org/geo/1.0/zip?zip=${city},US&appid=33a442ce0b1dad52f9352616c57d9d69`
+  var geoLocation = `https://api.openweathermap.org/geo/1.0/zip?zip=${city},US&appid=33a442ce0b1dad52f9352616c57d9d69`
   fetch(geoLocation)
     .then(function (response) {
       return response.json()
@@ -60,7 +62,7 @@ function cityWeather(city) {
       console.log("Called city Weather " + city)
       console.log(data);
       getoneCall(data.lat, data.lon);
-      // getParkData()
+      
     })
 };
 function getoneCall(lat, lon) {
@@ -136,7 +138,7 @@ function generateParkList(data) {
   return parkList;
 }
 
-// $("#search").on("click", trailSearch);
+
 
 let dropdown = document.getElementById('parks-dropdown');
 dropdown.length = 0;
@@ -180,8 +182,7 @@ fetch(url)
  
 
   
-  // $(window).on("load", getParkData);
-  //comment
+ 
   
   function handleParkClick() {
   //call weather service for park
