@@ -11,7 +11,7 @@ function getParkData() {
       console.log("Sending park info")
       console.log(data)
       var parkData = generateParkList(data)
-      // displayParkData(parkData);
+      
     })
 }
 
@@ -30,16 +30,13 @@ function getSingleParkData(parkCode) {
     // TODO: Loop over all activities and display in the page
     const activities = response.data;
     for (let i = 0; i < activities.length; i++) {
-      // const activityEl = $('<div>').text(activities[i].shortDescription);
-      // const br = $('<br>');
-      // activityEl.append(br)
-      // console.log(activityEl);
+      
       $("#main-park-activity").append(`<div> <p>` + activities[i].shortDescription + "</p> </div> <br/>");
 
       console.log("Activities Data: ", activities[i].shortDescription);
     }
   })
-    // cityWeather();
+   
 
 }
 
@@ -58,7 +55,7 @@ function cityWeather(city) {
       console.log("Called city Weather " + city)
       console.log(data);
       getoneCall(data.lat, data.lon);
-      // getParkData()
+      
     })
 };
 function getoneCall(lat, lon) {
@@ -133,7 +130,7 @@ function generateParkList(data) {
   return parkList;
 }
 
-// $("#search").on("click", trailSearch);
+
 
 let dropdown = document.getElementById('parks-dropdown');
 dropdown.length = 0;
@@ -177,8 +174,7 @@ fetch(url)
  
 
   
-  // $(window).on("load", getParkData);
-  //comment
+ 
   
   function handleParkClick() {
   //call weather service for park
