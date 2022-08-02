@@ -1,4 +1,4 @@
-
+ 
 const log = console.log;
 
 function getParkData() {
@@ -30,13 +30,14 @@ function getSingleParkData(parkCode) {
     // TODO: Loop over all activities and display in the page
     const activities = response.data;
     for (let i = 0; i < activities.length; i++) {
-      const activityEl = $('<div>').text(activities[i].shortDescription);
-      const br = $('<br>');
-      activityEl.append(br)
-      $("#main-park-name").append(activityEl);
+      // const activityEl = $('<div>').text(activities[i].shortDescription);
+      // const br = $('<br>');
+      // activityEl.append(br)
+      // console.log(activityEl);
+      $("#main-park-activity").append(`<div> <p>` + activities[i].shortDescription + "</p> </div> <br/>");
 
+      console.log("Activities Data: ", activities[i].shortDescription);
     }
-    console.log("Activities Data: ", activities);
   })
     // cityWeather();
 
