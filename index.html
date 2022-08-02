@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>Hike Trails/Weather</title>
+    <title>National Parks/Weather</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +13,7 @@
   </head>
   <body>
       <header class="bg-primary">
-        <h1 class="p-2 text-light text-center">Hike With Us!</h1>
+        <h1 class="p-2 text-light text-center">Utah's National Parks/Weather</h1>
       </header>
 
       <div class="m-4 p-4">
@@ -21,13 +21,20 @@
             <div class="row">
 
                 <container class="col-md-3">
-                    <h4>Trail Search</h4>
-                    <form class="form-inline" id="search-form">
+                    <h4>National Park Menu</h4>
+                    <!-- <form class="form-inline" id="search-form">
                         <input type="search" class="form-contorl mb-2" id="trailname" placeholder="Enter Trail Name...">
                     </form>
                     <button type="button" id="search" class="btn btn-primary btn-sm">Search</button>
-                    <ul class="list-group" id="search-history"></ul>
-                </container>
+                    <ul class="list-group" id="search-history"></ul> -->
+
+                    <span class="dropdown" for="parks">Select a National Park</span>
+                      <select name="parks" id="parks-dropdown">
+                        <svg class="parks-dropdown__progress" viewBox="0 0 48 48" width="auto" height="auto">
+                      </select>
+
+
+                  </container>
 
                 <div class="col-md-9">
                   <div class="card mt-2">
@@ -37,8 +44,9 @@
                       </div>
                       <h6 class="card-subtitle text-muted" id="main-trail-condition">Cond:</h6>
                       <h6 class="card-subtitle mt-3 text-muted" id="main-trail-temp">Temp:</h6>
-                      <h6 class="card-subtitle mt-3 text muted" id="main-trail-humid">Humidity:</h6>git ch
-                      <h6 class="card-subtitle mt-3 text muted" id="main-city-wind">Wind Speed:</h6>
+                      <h6 class="card-subtitle mt-3 text muted" id="main-trail-humid">Humidity:</h6>
+
+                      <h6 class="card-subtitle mt-3 text muted" id="main-trail-wind">Wind Speed:</h6>
                       <h6 class="card-subtitle mt-3 text muted" id="main-park-name">Park Name:</h6>
                         <div id="park-name-holder"></div>
                     </div>
