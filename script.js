@@ -11,6 +11,10 @@ function getParkData() {
       console.log("Sending park info")
       console.log(data)
       var parkData = generateParkList(data)
+
+      displayParkData(parkData);
+
+
       
     })
 }
