@@ -38,6 +38,7 @@ function getSingleParkData(parkCode) {
     }
     console.log("Activities Data: ", activities);
   })
+    // cityWeather();
 
 }
 
@@ -46,8 +47,8 @@ var searchHistory = []
 var prevCitySearched = ""
 
 function cityWeather(city) {
-  // var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=33a442ce0b1dad52f9352616c57d9d69&units=imperial";
-  var geoLocation = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=0a9af93029210912aafc391ead4bc3e3"
+
+  var geoLocation = `http://api.openweathermap.org/geo/1.0/zip?zip=${city},US&appid=33a442ce0b1dad52f9352616c57d9d69`
   fetch(geoLocation)
     .then(function (response) {
       return response.json()
@@ -55,8 +56,8 @@ function cityWeather(city) {
     .then(function (data) {
       console.log("Called city Weather " + city)
       console.log(data);
-      //getoneCall(data, city);
-      getParkData()
+      getoneCall(data.lat, data.lon);
+      // getParkData()
     })
 };
 function getoneCall(lat, lon) {
@@ -160,14 +161,11 @@ fetch(url)
         for (let i = 0; i < parksArray.length; i++) {
           option = document.createElement('option');
           option.setAttribute("id", parksArray[i].parkCode);
+          option.setAttribute("name", parksArray[i].addresses[0].postalCode);
           //add onclick to each element to call get parkData(parkCode)
           option.text = parksArray[i].fullName;
           option.value = parksArray[i].parkCode;
-          dropdown.add(option);
-          
-          
-          
-            
+          dropdown.add(option); 
         }
       });
     })
@@ -175,10 +173,10 @@ fetch(url)
     console.error('Fetch Error -', err);
   });
 
-  document.addEventListener("click", displayWeather);
+ 
 
   
-  $(window).on("load", getParkData);
+  // $(window).on("load", getParkData);
   //comment
   
   function handleParkClick() {
@@ -188,7 +186,9 @@ fetch(url)
 
 $("#parks-dropdown").on("change", function(event) {
   const parkCode = this.value;
-  log("Value: ", parkCode);
+  console.log("Value: ", parkCode);
+  var zipcode = $(this).find(":selected")[0].attributes[1].value;
+  console.log(zipcode);
   getSingleParkData(parkCode);
-  // displayWeather(weatherData);
+  cityWeather(zipcode);
 });
