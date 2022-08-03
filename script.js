@@ -36,11 +36,6 @@ function getSingleParkData(parkCode) {
     parkActivity.empty();
     const activities = response.data;
     for (let i = 0; i < activities.length; i++) {
-
-      // const activityEl = $('<div>').text(activities[i].shortDescription);
-      // const br = $('<br>');
-      // activityEl.append(br)
-      // console.log(activityEl);
       parkActivity.append(`<div> <p>` + activities[i].shortDescription + "</p> </div> <br/>");
 
 
@@ -189,8 +184,7 @@ fetch(url)
  
   
   function handleParkClick() {
-  //call weather service for park
-  //call getParkData(parkCode)
+  
 }
 
 $("#parks-dropdown").on("change", function(event) {
